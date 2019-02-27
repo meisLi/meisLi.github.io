@@ -97,13 +97,14 @@
 
 
   <meta name="description" content="第一篇文章[Temporal Logic-based Reactive Mission and Motion Planning]我们关于Synthesis问题的第一篇文章是叫[Temporal Logic-based Reactive Mission and Motion Planning]，是关于单机器人运动规划的，他们实现了自己的工具，叫LTLMoP，下载和安装指南都在  https://gi">
+<meta name="keywords" content="LTLMoP,综合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LTLMoP相关理论">
 <meta property="og:url" content="https://meisli.github.io/2019/02/27/LTLMoP相关理论/index.html">
 <meta property="og:site_name" content="20">
 <meta property="og:description" content="第一篇文章[Temporal Logic-based Reactive Mission and Motion Planning]我们关于Synthesis问题的第一篇文章是叫[Temporal Logic-based Reactive Mission and Motion Planning]，是关于单机器人运动规划的，他们实现了自己的工具，叫LTLMoP，下载和安装指南都在  https://gi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T11:51:52.235Z">
+<meta property="og:updated_time" content="2019-02-27T13:12:46.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LTLMoP相关理论">
 <meta name="twitter:description" content="第一篇文章[Temporal Logic-based Reactive Mission and Motion Planning]我们关于Synthesis问题的第一篇文章是叫[Temporal Logic-based Reactive Mission and Motion Planning]，是关于单机器人运动规划的，他们实现了自己的工具，叫LTLMoP，下载和安装指南都在  https://gi">
@@ -226,6 +227,40 @@
         
         
           
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-archives">
 
     
@@ -331,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-02-27 15:45:39 / 修改时间：19:51:52" itemprop="dateCreated datePublished" datetime="2019-02-27T15:45:39+08:00">2019-02-27</time>
+              <time title="创建时间：2019-02-27 15:45:39 / 修改时间：21:12:46" itemprop="dateCreated datePublished" datetime="2019-02-27T15:45:39+08:00">2019-02-27</time>
             
 
             
@@ -341,6 +376,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Synthesis/" itemprop="url" rel="index"><span itemprop="name">Synthesis</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -393,8 +446,7 @@
 <p>本文是基于论文[ R. Alur, S.L. Torre, Deterministic generators and games for LTL fragments]和[ E. Asarin, O. Maler, A. Pnueli, J. Sifakis, Controller synthesis for timed automata]的工作。</p>
 <p>本文中GR(1)公式的形式为$\square\Diamond p_1\land\cdots\land\square\Diamond p_m\to\square\Diamond q_1\land\cdots\land\square\Diamond q_n$，其中左端称为$assumptions$，右端称为$guarantees$。综合这样的问题，复杂度是$O(mnN^2)$的复杂度。虽然表达能力没有LTL全集能力强，但是也能描述大多数反应式系统。文章讲述了很多相关工作，关于LTL博弈的文章之类的，有的文章将LTL的每条性质转为$B\ddot uchi$或者$parity$自动机，再用$parity$博弈方法求解，关于$parity\ game$可以看下[Innite games on nitely coloured graphs with applications to automata on innite trees]这篇文章，也是刘老师带着读的，读过就不记得啥了。。。</p>
 <p>论文第二部分2.1讲述的是LTL的语义，关于$O(next)$、$U(until)$、$S(since)$及其组合表达式等，这部分提到两个性质，一个是安全性(safety)，一个是活性(liveness)。安全性，指坏事情永不发生，活性，指好事情最终一定要发生。</p>
-<p>接着讲了一些记号上的约定。没有时序逻辑的公式是布尔公式。用$\varphi(\mathcal{V}_1,\cdots,\mathcal{V}_k)$表示公式$\varphi$是关于布尔变量集合$\mathcal{V}_1\cup\cdots\cup\mathcal{V}_k$的。</p>
-<p>一个集合(这里其实就是FDS的一个节点)$s\in 2^{\mathcal{V}}=\Sigma_{\mathcal{V}}$，如果将属于$s$的变量在$\varphi$中的赋值为真，不在$s$中的变量赋值为假，$\varphi$是有效的，那么称集合$s$是满足$\varphi$的，即$s\models\varphi$。形式化定义是通过递归定义实现的。给一个集合$\mathcal{Y}\subseteq\mathcal{V}$和集合$s\in\Sigma_{\mathcal{V}}$，用$s\vert_\mathcal{V}=\{y\in\mathcal{V}\vert y\in s\}$表示$s$到$\mathcal{Y}$的投影(就是从$s$中拿出在$\mathcal{Y}$中的即可)。我们将断言(assertions)定义在$\mathcal{V}_1\cup\cdots\cup\mathcal{V}_k\cup\mathcal{V}’_1\cup\cdots\cup\mathcal{V}’_k$，其中$\mathcal{V}’$是还未赋值的变量，表某一个变量的下一个时刻。</p>
+<p>接着讲了一些记号上的约定。没有时序逻辑的公式是布尔公式。用$\varphi(\mathcal{V}_1,\cdots,\mathcal{V}_k)$表示公式$\varphi$是关于布尔变量集合$\mathcal{V}_1\cup\cdots\cup\mathcal{V}_k$的。一个集合(这里其实就是FDS的一个节点)$s\in 2^{\mathcal{V}}=\Sigma_{\mathcal{V}}$，如果将属于$s$的变量在$\varphi$中的赋值为真，不在$s$中的变量赋值为假，$\varphi$是有效的，那么称集合$s$是满足$\varphi$的，即$s\models\varphi$。形式化定义是通过递归定义实现的。给一个集合$\mathcal{Y}\subseteq\mathcal{V}$和集合$s\in\Sigma_{\mathcal{V}}$，用$s\vert_\mathcal{V}=\{y\in\mathcal{V}\vert y\in s\}$表示$s$到$\mathcal{Y}$的投影(就是从$s$中拿出在$\mathcal{Y}$中的即可)。我们将断言(assertions)定义在$\mathcal{V}_1\cup\cdots\cup\mathcal{V}_k\cup\mathcal{V}’_1\cup\cdots\cup\mathcal{V}’_k$，其中$\mathcal{V}’$是还未赋值的变量，表某一个变量的下一个时刻。</p>
 <p>2.2节讲述了一种系统，名为公平离散系统FDS，一个FDS $D=\langle\mathcal{V},\theta,\rho,\mathcal{J},\mathcal{C}\rangle$的各个成分看定义即可。其中注意$\mathcal{J}=\langle J_1,\cdots,J_m\rangle$是弱公平约束，$\mathcal{C}=\{(P_1,Q_1),\cdots,(P_n,Q_n)\}$是强公平约束。接受的路径$\sigma$需要满足无限多次满足弱公平约束和强公平约束。</p>
 <p>当一个FDS $D$的所有运行路径都是无限的，且都满足$\varphi$，那么称$D$实现了$\varphi$，记为$D\models\varphi$。如果FDS是fairness-free的那么$\mathcal{J}=\mathcal{C}=\emptyset$，如果FDS中$\mathcal{C}$是空集，称为JDS。大多数反应式系统都是JDS，需要$\mathcal{C}$一般是在有同步约束的系统中，如信号量或者同步通信。。。</p>
 <p>一个FDS $D$是关于$\mathcal{X}\subseteq\mathcal{V}$确定的，满足二个条件:</p>
@@ -449,27 +501,19 @@
 
     <footer class="post-footer">
       
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/27/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="post-tags">
+          
+            <a href="/tags/LTLMoP/" rel="tag"># LTLMoP</a>
+          
+            <a href="/tags/综合/" rel="tag"># 综合</a>
+          
         </div>
+      
+
+      
+      
+      
+
       
 
       
@@ -535,14 +579,42 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
