@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="20">
 <meta property="og:description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-01T02:31:48.623Z">
+<meta property="og:updated_time" content="2019-03-01T02:44:28.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机逻辑学书中的一些问题">
 <meta name="twitter:description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-03-01 08:48:22 / 修改时间：10:31:48" itemprop="dateCreated datePublished" datetime="2019-03-01T08:48:22+08:00">2019-03-01</time>
+              <time title="创建时间：2019-03-01 08:48:22 / 修改时间：10:44:28" itemprop="dateCreated datePublished" datetime="2019-03-01T08:48:22+08:00">2019-03-01</time>
             
 
             
@@ -437,7 +437,7 @@
 <p><strong>问</strong>：$pre_{\exists}$的OBDD实现为什么是$exsit(\ \hat {x’},\ apply(\ \cdot,\ B_{\to},\ B_{x’}\ )\ )$，本来说的是 $pre_{\exists}(Y)=\{\ s\in S\ \vert\ \exists\ s’.(s\to s’\land\ s’\in Y) \}$，即$EX(Y)$。主要是不懂一个状态OBDD左乘或右乘一个迁移OBDD代表了什么区别?<br><strong>解</strong>：TODO</p>
 <p><strong>问</strong>：$用\mu$演算刻画CTL公式$AF\varphi$，为$f^{AF_{\varphi}}=\mu Z.(f^{\varphi}+\forall \hat{x’}.(\overline{f^{\to}}+Z[\hat{x}:=\hat{x’}]))$?<br><strong>解</strong>：首先将$AF\varphi$写成不动点迭代的形式$AF\varphi\equiv\varphi\lor AX\ AF\varphi$，那么$f^{AF_{\varphi}}=\mu Z.(\varphi\lor AX\ Z)$，又因为$AX\varphi\equiv\neg EX\neg\varphi$，所以</p>
 <script type="math/tex; mode=display">\begin{aligned}     
-     f^{AF_{\varphi}}&=\mu Z.(\varphi\lor\ \neg(EX\neg Z)) \\&=\mu Z.(\varphi\lor\ \neg(\exists{\hat{x'}}.\ (\ f^{\to}\cdot f^{\neg\varphi}[\hat{x}:=\hat{x'}])))\\&=\mu Z.(\varphi\lor\ (\forall{\hat{x'}}.\ (\ \overline{f^{\to}}\ +\ f^{\varphi}[\hat{x}:=\hat{x'}])))
+     f^{AF_{\varphi}}&=\mu Z.(\varphi\lor\ \neg(EX\neg Z)) \\&=\mu Z.(\varphi\lor\ \neg(\exists{\hat{x'}}.\ (\ f^{\to}\cdot \neg Z[\hat{x}:=\hat{x'}])))\\&=\mu Z.(\varphi\lor\ (\forall{\hat{x'}}.\ (\ \overline{f^{\to}}\ +\ Z[\hat{x}:=\hat{x'}])))
 \end{aligned}</script><p>对了，这些$x$上面带 $\hat{}$的，代表了状态。</p>
 
       
