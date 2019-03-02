@@ -97,14 +97,14 @@
 
 
   <meta name="description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
-<meta name="keywords" content="CTL,LTL,$\mu$演算">
+<meta name="keywords" content="$\mu$演算,CTL,LTL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机逻辑学书中的一些问题">
 <meta property="og:url" content="https://meisli.github.io/2019/03/01/计算机逻辑学书中的一些问题/index.html">
 <meta property="og:site_name" content="20">
 <meta property="og:description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-01T02:44:28.844Z">
+<meta property="og:updated_time" content="2019-03-02T00:40:15.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机逻辑学书中的一些问题">
 <meta name="twitter:description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
@@ -366,12 +366,24 @@
                 
               
 
-              <time title="创建时间：2019-03-01 08:48:22 / 修改时间：10:44:28" itemprop="dateCreated datePublished" datetime="2019-03-01T08:48:22+08:00">2019-03-01</time>
+              <time title="创建时间：2019-03-01 08:48:22" itemprop="dateCreated datePublished" datetime="2019-03-01T08:48:22+08:00">2019-03-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-02 08:40:15" itemprop="dateModified" datetime="2019-03-02T08:40:15+08:00">2019-03-02</time>
               
             
           </span>
@@ -439,6 +451,13 @@
 <script type="math/tex; mode=display">\begin{aligned}     
      f^{AF_{\varphi}}&=\mu Z.(\varphi\lor\ \neg(EX\neg Z)) \\&=\mu Z.(\varphi\lor\ \neg(\exists{\hat{x'}}.\ (\ f^{\to}\cdot \neg Z[\hat{x}:=\hat{x'}])))\\&=\mu Z.(\varphi\lor\ (\forall{\hat{x'}}.\ (\ \overline{f^{\to}}\ +\ Z[\hat{x}:=\hat{x'}])))
 \end{aligned}</script><p>对了，这些$x$上面带 $\hat{}$的，代表了状态。</p>
+<p><strong>问</strong>：如果定义$[[\Diamond\varphi]]=\{s\in S\vert\exists s’.(\ (s,s’)\in\rho\land s’\in[[\varphi]])\}$，$[[\square\varphi]]=\{s\in S\vert\forall s’.(\ (s,s’)\in\rho \to s’\in[[\varphi]])\}$，其中的$S$和$\rho$是某一个$Kripke$的状态集和迁移集。</p>
+<script type="math/tex; mode=display">\begin{aligned}
+     \neg AF\neg\varphi&=\neg(\neg\varphi\lor AX\ AF\neg\varphi)  \\
+     &=\neg(\mu Z.(\neg\varphi\lor\square Z)) \\
+     &=\nu Z.(\varphi\land\Diamond\neg Z)\\
+     &\neq EG\varphi
+\end{aligned}</script><p><strong>解</strong>：变元不能取非，比如$\nu X.(\neg p\land\Diamond X)\equiv\neg\mu X.(p\lor\square X)$。<em>不知道自己数理逻辑学的什么，为啥不能取非呢?虽然直观感觉是不能取非，变元的值都不知道，取非没意义?</em></p>
 
       
     </div>
@@ -462,11 +481,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/mu-演算/" rel="tag"># $\mu$演算</a>
+          
             <a href="/tags/CTL/" rel="tag"># CTL</a>
           
             <a href="/tags/LTL/" rel="tag"># LTL</a>
-          
-            <a href="/tags/mu-演算/" rel="tag"># $\mu$演算</a>
           
         </div>
       
@@ -488,6 +507,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/02/mu演算的一些实例/" rel="prev" title="$\mu$演算的一些实例">
+                $\mu$演算的一些实例 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -547,7 +570,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -566,7 +589,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

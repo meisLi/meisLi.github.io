@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="20">
-<meta property="og:url" content="https://meisli.github.io/index.html">
+  <meta name="description" content="因为课件的模态$\mu$演算实在读不懂，从《计算机中的逻辑学》还能看懂关于$\mu$演算编码CTL。此处列出一些$\mu$演算编码CTL公式和LTL公式的实例。定义$[[\Diamond\varphi]]=\{s\in S\vert\exists s’.(\ (s,s’)\in\rho\land s’\in[[\varphi]])\}$，$[[\square\varphi]]=\{s\in S\v">
+<meta name="keywords" content="$\mu$演算,CTL,LTL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$\mu$演算的一些实例">
+<meta property="og:url" content="https://meisli.github.io/2019/03/02/mu演算的一些实例/index.html">
 <meta property="og:site_name" content="20">
+<meta property="og:description" content="因为课件的模态$\mu$演算实在读不懂，从《计算机中的逻辑学》还能看懂关于$\mu$演算编码CTL。此处列出一些$\mu$演算编码CTL公式和LTL公式的实例。定义$[[\Diamond\varphi]]=\{s\in S\vert\exists s’.(\ (s,s’)\in\rho\land s’\in[[\varphi]])\}$，$[[\square\varphi]]=\{s\in S\v">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-02T01:52:48.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20">
+<meta name="twitter:title" content="$\mu$演算的一些实例">
+<meta name="twitter:description" content="因为课件的模态$\mu$演算实在读不懂，从《计算机中的逻辑学》还能看懂关于$\mu$演算编码CTL。此处列出一些$\mu$演算编码CTL公式和LTL公式的实例。定义$[[\Diamond\varphi]]=\{s\in S\vert\exists s’.(\ (s,s’)\in\rho\land s’\in[[\varphi]])\}$，$[[\square\varphi]]=\{s\in S\v">
 
 
 
 
 
 
-  <link rel="canonical" href="https://meisli.github.io/">
+  <link rel="canonical" href="https://meisli.github.io/2019/03/02/mu演算的一些实例/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>20</title>
+  <title>$\mu$演算的一些实例 | 20</title>
   
 
 
@@ -167,8 +172,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,7 +210,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -302,9 +306,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -336,10 +340,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/02/mu演算的一些实例/" class="post-title-link" itemprop="url">$\mu$演算的一些实例</a>
+          <h1 class="post-title" itemprop="name headline">$\mu$演算的一些实例
+
               
             
           </h1>
@@ -428,22 +430,41 @@
       
 
       
-        
-          
-            <p>
-              因为课件的模态$\mu$演算实在读不懂，从《计算机中的逻辑学》还能看懂关于$\mu$演算编码CTL。此处列出一些$\mu$演算编码CTL公式和LTL公式的实例。定义$[[\Diamond\varphi]]=\{s\in S\vert\exists s’.(\ (s,s’)\in\rho\land s
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/02/mu演算的一些实例/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <p>因为课件的模态$\mu$演算实在读不懂，从《计算机中的逻辑学》还能看懂关于$\mu$演算编码CTL。此处列出一些$\mu$演算编码CTL公式和LTL公式的实例。定义$[[\Diamond\varphi]]=\{s\in S\vert\exists s’.(\ (s,s’)\in\rho\land s’\in[[\varphi]])\}$，$[[\square\varphi]]=\{s\in S\vert\forall s’.(\ (s,s’)\in\rho \to s’\in[[\varphi]])\}$，$[[\bigcirc\varphi]]=\{s\in S\vert(s,s’)\in\rho\land s’\in[[\varphi]]\}$，其中的$S$和$\rho$是某一个$Kripke$的状态集和迁移集，$\bigcirc$对应是线性$Kripke$结构。<em>此处并不知道这样的描述对不对。。。</em></p>
+<blockquote>
+<p>$AG\varphi:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &AG\varphi&&=&&\varphi\land AX\ AG\varphi\\
+    &[[AG\varphi]]&&=&&\nu Z.(\varphi\land\square Z)
+\end{aligned}</script><p>$AF\varphi:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &AF\varphi&&=&&\varphi\lor AX\ AF\varphi\\
+    &[[AF\varphi]]&&=&&\mu Z.(\varphi\lor\square Z)
+\end{aligned}</script><p>$EG\varphi:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &EG\varphi&&=&&\varphi\land EX\ EG\varphi\\
+    &[[EG\varphi]]&&=&&\nu Z.(\varphi\land\Diamond Z)
+\end{aligned}</script><p>$EF\varphi:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &EF\varphi&&=&&\varphi\lor EX\ EF\varphi\\
+    &[[EF\varphi]]&&=&&\mu Z.(\varphi\lor\Diamond Z)
+\end{aligned}</script><p>$A[\varphi U\psi]:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &A[\varphi U\psi]&&=&&\psi\lor(\varphi\land AX\ A[\varphi U\psi])\\
+    &[[A[\varphi U\psi]]]&&=&&\mu Z.(\psi\lor(\varphi\land\square Z))
+\end{aligned}</script><p>$E[\varphi U\psi]:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &E[\varphi U\psi]&&=&&\psi\lor(\varphi\land EX\ E[\varphi U\psi])\\
+    &[[E[\varphi U\psi]]]&&=&&\mu Z.(\psi\lor(\varphi\land\Diamond Z))
+\end{aligned}</script><p>$A[\varphi W\psi]:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &[[A[\varphi W\psi]]]&&=&&\nu Z.(\psi\lor(\varphi\land\square Z))
+\end{aligned}</script><p>$\varphi W\psi:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+    &[[\varphi W\psi]]&&=&&\nu Z.(\psi\lor(\varphi\land\bigcirc Z))
+\end{aligned}</script></blockquote>
+<p>书上的$Weak\ Until$是转为$Release$再转为$Until$。<br>但是关于LTL或者CTL的时序算子的组合，并不知道怎么用$\mu$演算表示，比如$GF\varphi$，$FG\varphi$怎么用表示???<br>猜测，<br>$[[GF\varphi]]=\nu X.(\mu Y.(\varphi\land\bigcirc X\lor\bigcirc Y))?$<br>$[[FG\varphi]]=\mu X.(\nu Y.(\varphi\land\bigcirc Y\lor\bigcirc X))?$</p>
+
       
     </div>
 
@@ -464,387 +485,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://meisli.github.io/2019/03/01/计算机逻辑学书中的一些问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ares">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="20">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/01/计算机逻辑学书中的一些问题/" class="post-title-link" itemprop="url">计算机逻辑学书中的一些问题</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-01 08:48:22" itemprop="dateCreated datePublished" datetime="2019-03-01T08:48:22+08:00">2019-03-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-02 08:40:15" itemprop="dateModified" datetime="2019-03-02T08:40:15+08:00">2019-03-02</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/模型检验/" itemprop="url" rel="index"><span itemprop="name">模型检验</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/模型检验/问题集/" itemprop="url" rel="index"><span itemprop="name">问题集</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/mu-演算/" rel="tag"># $\mu$演算</a>
           
-
+            <a href="/tags/CTL/" rel="tag"># CTL</a>
           
-            
-            
+            <a href="/tags/LTL/" rel="tag"># LTL</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-            <p>
-              问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/01/计算机逻辑学书中的一些问题/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/01/计算机逻辑学书中的一些问题/" rel="next" title="计算机逻辑学书中的一些问题">
+                <i class="fa fa-chevron-left"></i> 计算机逻辑学书中的一些问题
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://meisli.github.io/2019/02/27/LTLMoP相关理论/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ares">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="20">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/27/LTLMoP相关理论/" class="post-title-link" itemprop="url">LTLMoP相关理论</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-27 15:45:39" itemprop="dateCreated datePublished" datetime="2019-02-27T15:45:39+08:00">2019-02-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-28 09:16:17" itemprop="dateModified" datetime="2019-02-28T09:16:17+08:00">2019-02-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Synthesis/" itemprop="url" rel="index"><span itemprop="name">Synthesis</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>
-              第一篇文章[Temporal Logic-based Reactive Mission and Motion Planning]我们关于Synthesis问题的第一篇文章是叫[Temporal Logic-based Reactive Mission and Motion Planning]，是关于
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/27/LTLMoP相关理论/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -854,14 +528,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1094,6 +769,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
 
   
 
@@ -1105,6 +784,8 @@
   
 
 
+  
+
 
   
 
@@ -1119,16 +800,6 @@
   
 
   
-  
-    
-      
-        
-      
-    
-      
-    
-      
-    
   
 
   
