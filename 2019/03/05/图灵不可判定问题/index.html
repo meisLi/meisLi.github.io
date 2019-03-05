@@ -96,25 +96,24 @@
 
 
 
-  <meta name="description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
-<meta name="keywords" content="$\mu$演算,CTL,LTL">
+  <meta name="description" content="一些记号约定：所有图灵机构成的集合为$M_A$，某个图灵机$M$的语言为$L(M)$，一个串$\omega$被某个图灵机$M$接受记为$\omega\in L(M)$。语言$X$的判定问题为是否存在某个图灵机$M$能够识别$X$。某个串$\omega$在某个图灵机$M$上停机记为$\omega\in h(M)$。 $A_{TM}$判定问题给你任意图灵机$M$，和一个串$\omega$，判定$\om">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机逻辑学书中的一些问题">
-<meta property="og:url" content="https://meisli.github.io/2019/03/01/计算机逻辑学书中的一些问题/index.html">
+<meta property="og:title" content="图灵不可判定问题">
+<meta property="og:url" content="https://meisli.github.io/2019/03/05/图灵不可判定问题/index.html">
 <meta property="og:site_name" content="20">
-<meta property="og:description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
+<meta property="og:description" content="一些记号约定：所有图灵机构成的集合为$M_A$，某个图灵机$M$的语言为$L(M)$，一个串$\omega$被某个图灵机$M$接受记为$\omega\in L(M)$。语言$X$的判定问题为是否存在某个图灵机$M$能够识别$X$。某个串$\omega$在某个图灵机$M$上停机记为$\omega\in h(M)$。 $A_{TM}$判定问题给你任意图灵机$M$，和一个串$\omega$，判定$\om">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-02T00:40:15.471Z">
+<meta property="og:updated_time" content="2019-03-05T09:13:30.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机逻辑学书中的一些问题">
-<meta name="twitter:description" content="问：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?解：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi">
+<meta name="twitter:title" content="图灵不可判定问题">
+<meta name="twitter:description" content="一些记号约定：所有图灵机构成的集合为$M_A$，某个图灵机$M$的语言为$L(M)$，一个串$\omega$被某个图灵机$M$接受记为$\omega\in L(M)$。语言$X$的判定问题为是否存在某个图灵机$M$能够识别$X$。某个串$\omega$在某个图灵机$M$上停机记为$\omega\in h(M)$。 $A_{TM}$判定问题给你任意图灵机$M$，和一个串$\omega$，判定$\om">
 
 
 
 
 
 
-  <link rel="canonical" href="https://meisli.github.io/2019/03/01/计算机逻辑学书中的一些问题/">
+  <link rel="canonical" href="https://meisli.github.io/2019/03/05/图灵不可判定问题/">
 
 
 
@@ -124,7 +123,7 @@
   };
 </script>
 
-  <title>计算机逻辑学书中的一些问题 | 20</title>
+  <title>图灵不可判定问题 | 20</title>
   
 
 
@@ -323,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://meisli.github.io/2019/03/01/计算机逻辑学书中的一些问题/">
+    <link itemprop="mainEntityOfPage" href="https://meisli.github.io/2019/03/05/图灵不可判定问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ares">
@@ -340,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">计算机逻辑学书中的一些问题
+          <h1 class="post-title" itemprop="name headline">图灵不可判定问题
 
               
             
@@ -366,53 +365,16 @@
                 
               
 
-              <time title="创建时间：2019-03-01 08:48:22" itemprop="dateCreated datePublished" datetime="2019-03-01T08:48:22+08:00">2019-03-01</time>
+              <time title="创建时间：2019-03-05 15:09:46 / 修改时间：17:13:30" itemprop="dateCreated datePublished" datetime="2019-03-05T15:09:46+08:00">2019-03-05</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-02 08:40:15" itemprop="dateModified" datetime="2019-03-02T08:40:15+08:00">2019-03-02</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/模型检验/" itemprop="url" rel="index"><span itemprop="name">模型检验</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/模型检验/问题集/" itemprop="url" rel="index"><span itemprop="name">问题集</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -442,22 +404,51 @@
       
 
       
-        <p><strong>问</strong>：LTL模型检验为什么是自动机$A_{\neg\varphi}$后乘模型$\mathcal{M}$，而不是$A_{\varphi}$乘$\mathcal{M}$?<br><strong>解</strong>：自动机$A_{\varphi}\times\mathcal{M}$就算有接受路径包含$s_0\in Q_0$，也不能说明从$s\in Q_0$出发的都是接受路径，即，有路径$\pi\models\mathcal{M}\land\pi\not\models\varphi$，即$A_{\varphi}\times\mathcal{M}$不能判定$\mathcal{M}\models\varphi$为真。</p>
-<p><strong>问</strong>：从LTL构造自动机的tableau方法的接受条件为什么是对所有形如$\varphi U\psi\in El(\varphi)$的公式，构造公平约束$\{S\subseteq El(\varphi)\ \vert\ S\not\Vdash\varphi U\psi\ or\ S\Vdash\psi$\}?<br><strong>解</strong>：TODO</p>
-<p><strong>问</strong>：为什么LTL模型检验中，$A_{\neg\varphi}\times\mathcal{M}$还得做CTL的模型检验，验证性质FAIRNESS $\neg\varphi_i U\psi_i$? 为什么不是直接看该自动机有无包含$s\in Q_0$的节点即可?<br><strong>解</strong>：注意是要看$A_{\neg\varphi}\times\mathcal{M}$是否有接受路径，不被接受的路径不认为是$A_{\neg\varphi}$和$\mathcal{M}$的交。所以用CTL的模型检验是可以的去检验一个模型是否含有某种公平性约束。<em>此书中是先实现了CTL的显式算法，在实现LTL的模型检验时，调用了CTL的模型检验算法</em></p>
-<p><strong>问</strong>：$EG\varphi$的显式标记算法，找关于$\varphi$的SCC，但是这些SCC也可能跑出去呀?<br><strong>解</strong>：注意是$EG$，不是$AG$，存在就可以了。。。</p>
-<p><strong>问</strong>：$pre_{\exists}$的OBDD实现为什么是$exsit(\ \hat {x’},\ apply(\ \cdot,\ B_{\to},\ B_{x’}\ )\ )$，本来说的是 $pre_{\exists}(Y)=\{\ s\in S\ \vert\ \exists\ s’.(s\to s’\land\ s’\in Y) \}$，即$EX(Y)$。主要是不懂一个状态OBDD左乘或右乘一个迁移OBDD代表了什么区别?<br><strong>解</strong>：TODO</p>
-<p><strong>问</strong>：$用\mu$演算刻画CTL公式$AF\varphi$，为$f^{AF_{\varphi}}=\mu Z.(f^{\varphi}+\forall \hat{x’}.(\overline{f^{\to}}+Z[\hat{x}:=\hat{x’}]))$?<br><strong>解</strong>：首先将$AF\varphi$写成不动点迭代的形式$AF\varphi\equiv\varphi\lor AX\ AF\varphi$，那么$f^{AF_{\varphi}}=\mu Z.(\varphi\lor AX\ Z)$，又因为$AX\varphi\equiv\neg EX\neg\varphi$，所以</p>
-<script type="math/tex; mode=display">\begin{aligned}     
-     f^{AF_{\varphi}}&=\mu Z.(\varphi\lor\ \neg(EX\neg Z)) \\&=\mu Z.(\varphi\lor\ \neg(\exists{\hat{x'}}.\ (\ f^{\to}\cdot \neg Z[\hat{x}:=\hat{x'}])))\\&=\mu Z.(\varphi\lor\ (\forall{\hat{x'}}.\ (\ \overline{f^{\to}}\ +\ Z[\hat{x}:=\hat{x'}])))
-\end{aligned}</script><p>对了，这些$x$上面带 $\hat{}$的，代表了状态。</p>
-<p><strong>问</strong>：如果定义$[[\Diamond\varphi]]=\{s\in S\vert\exists s’.(\ (s,s’)\in\rho\land s’\in[[\varphi]])\}$，$[[\square\varphi]]=\{s\in S\vert\forall s’.(\ (s,s’)\in\rho \to s’\in[[\varphi]])\}$，其中的$S$和$\rho$是某一个$Kripke$的状态集和迁移集。</p>
-<script type="math/tex; mode=display">\begin{aligned}
-     \neg AF\neg\varphi&=\neg(\neg\varphi\lor AX\ AF\neg\varphi)  \\
-     &=\neg(\mu Z.(\neg\varphi\lor\square Z)) \\
-     &=\nu Z.(\varphi\land\Diamond\neg Z)\\
-     &\neq EG\varphi
-\end{aligned}</script><p><strong>解</strong>：变元不能取非，比如$\nu X.(\neg p\land\Diamond X)\equiv\neg\mu X.(p\lor\square X)$。<em>不知道自己数理逻辑学的什么，为啥不能取非呢?虽然直观感觉是不能取非，变元的值都不知道，取非没意义?</em></p>
+        <p>一些记号约定：<br>所有图灵机构成的集合为$M_A$，某个图灵机$M$的语言为$L(M)$，一个串$\omega$被某个图灵机$M$接受记为$\omega\in L(M)$。<br>语言$X$的判定问题为是否存在某个图灵机$M$能够识别$X$。<br>某个串$\omega$在某个图灵机$M$上停机记为$\omega\in h(M)$。</p>
+<h2 id="A-TM-判定问题"><a href="#A-TM-判定问题" class="headerlink" title="$A_{TM}$判定问题"></a>$A_{TM}$判定问题</h2><p>给你任意图灵机$M$，和一个串$\omega$，判定$\omega\in L(M)$？这个问题代表了这样一个语言的判定问题，$A_{TM}=\{ \langle M, \omega\rangle\vert M\in M_A\land\omega\in L(M) \}$。问$A_{TM}$这样的语言是否可判定就是问是否存在图灵机$M$识别$A_{TM}$。<br><strong>解</strong>：假如存在这样的一个判定器$H$$\left\{<br>\begin{aligned}<br>accepts\langle M,\omega\rangle, if\ M\ accepts\ \omega.\\<br>rejects\langle M,\omega\rangle, if\ M\ rejects\ \omega.<br>\end{aligned}<br>\right.$构造一个矛盾的判定器$D$以$H$作为子程序，$D$输入一个图灵机的描述$\langle M\rangle$，构造串$\langle M,\langle M\rangle\rangle$输入到$H$。如果子程序$H$接受$\langle M,\langle M\rangle\rangle$，则$D$拒绝$\langle M\rangle$。如果子程序$H$拒绝$\langle M,\langle M\rangle\rangle$，则$D$接受$\langle M\rangle$。</p>
+<p>现向图灵机$D$输入$\langle D\rangle$，看看发生什么：</p>
+<blockquote>
+<ol>
+<li>$D$构造串$\langle D, \langle D\rangle\rangle$</li>
+<li>$H$如果接受，则说明$D$接受串$\langle D\rangle$，则$D$拒绝串$\langle D\rangle$。矛盾<br>$H$如果接受，则说明$D$拒绝串$\langle D\rangle$，则$D$接受串$\langle D\rangle$。矛盾</li>
+</ol>
+</blockquote>
+<p>这里证明用到了一种手法，叫作<br><strong>规约(reduction)</strong>：将一个问题转化为另外一个问题，且可以用第二个问题的解来解第一个问题。</p>
+<p>所以$D$不可能存在，且$D$能规约到$H$，自然$H$就不可能存在($H$存在，$D$就存在)。即，$\neg e(D)\land r(D,H)\to\neg e(H)$，逆否命题为 $e(H)\land r(D, H)\to e(D)$。</p>
+<h2 id="HALT-TM-问题"><a href="#HALT-TM-问题" class="headerlink" title="$HALT_{TM}$问题"></a>$HALT_{TM}$问题</h2><p>图灵停机问题：确定一个图灵机$M$对给定的输入$\omega$是否停机。停机指要么接受，要么拒绝。$HATL_{TM}=\{\langle M,\omega\rangle\vert M\in M_A\land\omega\in h(M)\rangle\}$。问该语言是否可判定。<br><strong>解</strong>：如果$A_{TM}$问题能够规约到$HALT_{TM}$问题，则能够说明$HALT_{TM}$问题是不可判定的。假如存在一个判定器$H$识别语言$HALT_{TM}$，先看看$H$是做什么的：</p>
+<blockquote>
+<ol>
+<li>给定任意串$\langle M,\omega\rangle$输入到$H$。</li>
+<li>如果$H$接受，那么代表$M$拒绝或者接受$\omega$<br>如果$H$拒绝，那么代表$M$在$\omega$上不停机。</li>
+</ol>
+</blockquote>
+<p>现构造判定器$D$识别$A_{TM}$语言，如下：</p>
+<blockquote>
+<ol>
+<li>给定任意串$\langle M,\omega\rangle$输入到$D$</li>
+<li>调用$H$，如果$H$拒绝$\langle M,\omega\rangle$，那么$D$拒绝$\langle M,\omega\rangle$</li>
+<li>如果$H$接受，那么构造$M$让$\omega$在$M$上运行。<br>如果$M$接受$\omega$，$D$接受$\langle M,\omega\rangle$；如果$M$拒绝$\omega$，$D$拒绝$\langle M,\omega\rangle$。</li>
+</ol>
+</blockquote>
+<p>则上述构造的$D$即为$A_{TM}$的判定器，而已经证明这样的判定器不存在，则不存在$HATL_{TM}$的判定器。</p>
+<h2 id="E-TM-问题"><a href="#E-TM-问题" class="headerlink" title="$E_{TM}$问题"></a>$E_{TM}$问题</h2><p>图灵判空问题，给定图灵机$M$，问$L(M)$是否为$\emptyset$。即，$E_{TM}=\{\langle M\rangle|M\in M_A\land L(M)=\emptyset\}$，问$E_{TM}$是否可判定。<br><strong>解</strong>：现将该问题规约到$A_{TM}$问题，假定存在$E_{TM}$判定器$H$，构造一个判定器$D$使得$D$能识别语言$A_{TM}$。</p>
+<blockquote>
+<ol>
+<li>给定任意串$\langle M,\omega\rangle$输入到$D$</li>
+<li>重构$M_1$如下：<br>$M_1$对于任意输入串$\omega’$，<br>如果$\omega’\neq\omega$，则$M_1$拒绝<br>如果$\omega’=\omega$，则若$M$接受，$M_1$就接受</li>
+<li>将$M_1$送到判定器$H$，<br>如果$H$接受$\langle M_1\rangle$，则$D$拒绝$\langle M,\omega\rangle$。<br>如果$H$拒绝$\langle M_1\rangle$，则$D$接受$\langle M,\omega\rangle$。</li>
+</ol>
+</blockquote>
+<p>上述构造只给$M_1$留了一个入口：$\omega$。如果$L(M_1)$是空语言，那么$M$对于$\omega$要么拒绝，要么不停止，这个是$E_{TM}$判定器$H$做的事。如果$L(M_1)$不是空语言，那么表明$M$接受了$\omega$。也就实现了$A_{TM}$的判定器。</p>
+<h2 id="EQ-TM-判定问题"><a href="#EQ-TM-判定问题" class="headerlink" title="$EQ_{TM}$判定问题"></a>$EQ_{TM}$判定问题</h2><p>图灵机等价性问题：即语言$EQ_{TM}=\{\langle M_1,M_2\rangle\vert M_1\in M_A\land M_2\in M_A\land L(M_1)=L(M_2)\}$的判定问题。<br><strong>解</strong>：假定存在$EQ_{TM}$的判定器$H$，现将该问题规约到$E_{TM}$问题，构造$E_{TM}$的判定器$D$如下：</p>
+<blockquote>
+<ol>
+<li>给定任意串$\langle M\rangle$输入到$D$</li>
+<li>构造图灵机$M’$，且$M’$不管输入什么串，直接拒绝</li>
+<li>调用$H$输入$\langle M,M’\rangle$，<br>如果$H$接受$\langle M,M’\rangle$，那么$D$接受$M$，<br>如果$H$拒绝$\langle M,M’\rangle$，那么$D$拒绝$M$。</li>
+</ol>
+</blockquote>
+<p>那么上述构造了一个$E_{TM}$判定器，只需要调用$EQ_{TM}$，看看$M$是否和$M’$等价即可。$E_{TM}$不存在，所以$EQ_{TM}$不存在。</p>
 
       
     </div>
@@ -479,16 +470,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/mu-演算/" rel="tag"># $\mu$演算</a>
-          
-            <a href="/tags/CTL/" rel="tag"># CTL</a>
-          
-            <a href="/tags/LTL/" rel="tag"># LTL</a>
-          
-        </div>
-      
 
       
       
@@ -498,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/27/LTLMoP相关理论/" rel="next" title="LTLMoP相关理论">
-                <i class="fa fa-chevron-left"></i> LTLMoP相关理论
+              <a href="/2019/03/04/软件强制安全项目任务认领/" rel="next" title="软件强制安全项目任务认领">
+                <i class="fa fa-chevron-left"></i> 软件强制安全项目任务认领
               </a>
             
           </div>
@@ -507,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/02/mu演算的一些实例/" rel="prev" title="$\mu$演算的一些实例">
-                $\mu$演算的一些实例 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -554,8 +531,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -651,6 +637,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-TM-判定问题"><span class="nav-number">1.</span> <span class="nav-text">$A_{TM}$判定问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HALT-TM-问题"><span class="nav-number">2.</span> <span class="nav-text">$HALT_{TM}$问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-TM-问题"><span class="nav-number">3.</span> <span class="nav-text">$E_{TM}$问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EQ-TM-判定问题"><span class="nav-number">4.</span> <span class="nav-text">$EQ_{TM}$判定问题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
